@@ -1,15 +1,17 @@
-from stats import *
+from stats import get_num_words, count_letters
 
-def get_book_txt(input: str)->str:
-    with open(input) as f:
-        file_contents = f.read()
-    return file_contents
+def print_num_words(num_words: list[str])-> str:
+    return print(f"Found {num_words} total words")
 
-
+def print_freq_letters(freq_letters: dict[str,int])->str:
+    
 
 def main():
 
     # Read File Challenge
-    print(count_words("books/frankenstein.txt"))
+    num_words = get_num_words("books/frankenstein.txt")
+    print_num_words(num_words)
 
-main()
+
+if __name__ == "__main__":
+    main()
