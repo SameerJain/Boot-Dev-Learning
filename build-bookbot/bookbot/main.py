@@ -1,14 +1,32 @@
+import sys
 from stats import *
+from prints import * 
 
 
+def main() -> None:
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        return sys.exit(1)
+    
+    book_path = sys.argv[1]
+    generate_report(book_path)
 
-def main():
-
-    # Read File Challenge
-    franken_word_list = get_word_list("books/frankenstein.txt")
-    print_num_words(franken_word_list)
-    freq_map = get_freq_letters_iter(get_book_txt("books/frankenstein.txt"))
-    print_freq_letters(freq_map)
 
 if __name__ == "__main__":
     main()
+
+    """
+    MENU TEXT FOR LATER 
+    "Welcome to the Samatron "Bookbot"!\nAll books are grabbed from the /books folder\nSelect which book (.txt file) you would like to get stats of:" 
+
+    0: Recheck the /books folder 
+    QUIT
+    "Now enter which stat you would like:"
+    Total amount of words
+    Total amount of characters
+    Frequency of each word 
+    Frequency of each character
+
+    Select a different book
+    QUIT
+    """
