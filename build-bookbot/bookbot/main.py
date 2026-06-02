@@ -8,6 +8,14 @@ def print_books_dir() -> None:
 
 def print_dict
 
+"""
+Check if book filepath was given 
+    if it was, ask what they want 
+if not ask for the path 
+ask what they want done 
+ask if they want to choose another book or quit
+
+"""
 def main() -> None:
     if len(sys.argv) < 1:
         print("Usage: python3 main.py <path_to_book>")
@@ -35,7 +43,8 @@ def main() -> None:
     book_path = "books/" + books_menu[value]
     print_report(book_path)
 
-    print("Would you like to try another book or quit")
+    print("Would you like to try another book or quit")\
+    options = {"1":"Try another book","0":"QUIT"}
 
 
 if __name__ == "__main__":
