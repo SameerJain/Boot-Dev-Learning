@@ -18,16 +18,14 @@ def get_char_freqs_iter(file_contents: str) -> dict[str, int]:
         freq_map[cleaned_char] = freq_map.get(cleaned_char, 0) + 1
     return freq_map
 
-def sort_on(char_freq:tuple[str,int]) -> int:
+def sort_on(char_freq:tuple[str,int]) -> int: 
     return char_freq[1]
 
 def chars_dict_to_sorted_list(char_freqs:dict[str,int]) -> list[tuple[str,int]]:
     result = []
-    for key in char_freqs.keys():
-        result.append(char_freqs[key])
-    return sorted(result,reverse=False,key=sort_on)
+    for char in char_freqs.keys():
+        count = char_freqs[char]
+        result.append((char,count))
+    return sorted(result,key=sort_on,reverse=True)
 
-'''
-sorted exercise for new assigment 
-return sorted new datatype
-'''
+Wow I really like this web broewr

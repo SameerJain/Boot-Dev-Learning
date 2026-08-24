@@ -4,3 +4,4 @@ def factorial(num):
     return num * factorial(num - 1) 
 
 print(factorial(15))
+print(factorial(15))

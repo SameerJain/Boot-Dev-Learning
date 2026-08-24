@@ -15,6 +15,7 @@ def orginal_main_function():
     if len(sys.argv) < 2:
         print("Usage: python3 main.py <path_to_book>")
     return sys.exit(1)
+
     book_path = sys.argv[1]
     generate_report(book_path)
 
@@ -86,13 +87,19 @@ def menu_based_main_function():
 
 
 def main() -> None:
-    if len(sys.argv) < 2:
-        print("Usage: python3 main.py <path_to_book>")
-        return sys.exit(1)
-    book_path = sys.argv[1]
-    result = chars_dict_to_sorted_list
-    menu_based_main_function()
+    # if len(sys.argv) < 2:
+    #     print("Usage: python3 main.py <path_to_book>")
+    #     return sys.exit(1)
 
+    book_path = "books/frankenstein.txt"
+
+    file_contents = get_book_txt(book_path)
+    word_list = get_word_list(file_contents)
+    char_freqs = get_char_freqs_iter(file_contents)
+    sorted_char_freqs = chars_dict_to_sorted_list(char_freqs)
+
+    print_num_words(word_list)
+    print(sorted_char_freqs)
 
 if __name__ == "__main__":
     main()
