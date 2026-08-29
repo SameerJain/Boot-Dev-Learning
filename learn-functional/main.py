@@ -15,5 +15,3 @@ def file_type_getter(
 file_extensions_tuples: list[tuple[str, list[str]]] = [("document", [".doc", ".docx"]), ("image", [".jpg", ".png"])]
 
 file_type_getter(file_extensions_tuples)
-
-temp: list[int] =                                  

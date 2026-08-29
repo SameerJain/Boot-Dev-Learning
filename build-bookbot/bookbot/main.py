@@ -1,10 +1,12 @@
-import sys
 import os
-from stats import *
-from prints import * 
+import sys
 
-def get_user_option(input_dict: dict[str,str]) -> int:
-    for key,value in input_dict.items():
+from prints import *
+from stats import *
+
+
+def get_user_option(input_dict: dict[str, str]) -> int:
+    for key, value in input_dict.items():
         print(f"{key}:{value}")
     user_input = input("\nEnter the corresponding Value:\n")
     return user_input
@@ -40,7 +42,7 @@ def menu_based_main_function():
     while True:
         books_list = os.listdir("books")
         options = {}
-        for i in range(0, len(books_list)):
+        for i in range(len(books_list)):
             options[str(i + 1)] = books_list[i]
         print('Select which "book" (.txt file) you would like to get stats of:')
         user_input = get_user_option(options)
@@ -100,6 +102,7 @@ def main() -> None:
 
     print_num_words(word_list)
     print(sorted_char_freqs)
+
 
 if __name__ == "__main__":
     main()
