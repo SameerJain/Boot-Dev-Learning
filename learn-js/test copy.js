@@ -1,12 +1,22 @@
-function reformat(message, formatter) {
-  let mess = formatter(message);
-  messformatter(message);
-  formatter(message);
-  return "TEXTIO" + message;
+function getMessageStatus(message) {
+  let messageStatus = "processing";
+
+  function isValidLength(message) {
+    let messageStatus = "invalid";
+
+    if (message.length > 0) {
+      messageStatus = "valid";
+    }
+
+    return messageStatus;
+  }
+
+  // don't touch above this line
+
+  isValidLength(message);
+  return messageStatus;
 }
 
 // don't touch below this line
-
-export { reformat };
-
-console.log(reformat("hello",(msg) => msg.toUpperCase()));
+console.log(getMessageStatus("Tread lightly"))
+export { getMessageStatus };

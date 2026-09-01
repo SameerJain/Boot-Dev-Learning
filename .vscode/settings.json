@@ -6,6 +6,10 @@
   "editor.inlayHints.enabled": "off",
   "python.analysis.inlayHints.variableTypes": true,
   "python.analysis.inlayHints.functionReturnTypes": true,
+  "indentRainbow.excludedLanguages": [
+    "javascript",
+    "javascriptreact"
+  ],
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff",
     "editor.formatOnSave": true,

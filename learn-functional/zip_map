@@ -1,0 +1,27 @@
+
+result = {}
+def zipmap(keys: list[str], values: list[float]) -> dict[str, float]:
+    #print(keys,values)
+    if len(keys) == 0 or len(values) == 0:
+        return {}
+    zipmap(keys[1:], values[1:])
+    result[keys[0]] = values[0]
+    return result
+
+
+zipped: dict[str, float] = zipmap(
+    [
+        "Avatar: The Last Airbender",
+        "Avatar (in Papyrus font)",
+        "The Last Airbender (Live Action)",
+    ],
+    [9.9, 6.1, 2.1],
+)
+
+print(f"{zipped}")
+
+# {
+#   'Avatar: The Last Airbender': 9.9,
+#   'Avatar (in Papyrus font)': 6.1,
+#   'The Last Airbender (Live Action)': 2.1,
+# }
