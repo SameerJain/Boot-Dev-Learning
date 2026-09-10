@@ -4,10 +4,12 @@ def merge_sort(nums: list[int]) -> list[int]:
     if len(nums) < 2:
         return nums
     size = len(nums)
-    first_arr = nums[:size]
-    second_arr = nums[size - 1:]
-    merge_sort(first_arr)
-    merge_sort(second_arr)
+    first_arr = nums[:size//2]
+    second_arr = nums[size//2:]
+
+    print(first_arr)
+    print(second_arr)
+
     
 
 def merge(first: list[int], second: list[int]) -> list[int]:
@@ -29,5 +31,5 @@ def merge(first: list[int], second: list[int]) -> list[int]:
     
     return final
 
-test = [1,2,3,4,5,6,7,8]
-print(test[5:])
+test = [1,2,3,4,5,6,7,8,9]
+print(merge_sort(test))
